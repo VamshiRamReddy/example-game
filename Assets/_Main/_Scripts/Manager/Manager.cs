@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
-
     public static Manager instance = null;
     public static Manager Instance
     {
@@ -38,6 +37,7 @@ public class Manager : MonoBehaviour
     {
         AllScreeensinitial();
         StartCoroutine(SplashScreenEnd());
+       
     }
     private void AllScreeensinitial()
     {
@@ -79,5 +79,8 @@ public class Manager : MonoBehaviour
         productModelScreen.SetActive(false);
         EnginesScreen.SetActive(true);
     }
+
+  
+
 }
 
