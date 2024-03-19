@@ -10,13 +10,15 @@ public class Manager : MonoBehaviour
         get { return instance; }
     }
 
-    [SerializeField] public GameObject SplashScreen;
-    [SerializeField] public GameObject ModeSelection;
+    [SerializeField] public SplashScreen SplashScreen;
+    [SerializeField] public Modeselection ModeSelection;
     [SerializeField] public GameObject LoginScreeen;
     [SerializeField] public GameObject FullProductScreen;
     [SerializeField] public GameObject ProductScreen;
     [SerializeField] public GameObject productModelScreen;
     [SerializeField] public GameObject EnginesScreen;
+
+    [SerializeField] public GameObject ashokLeylandLogo;
 
 
     void Awake()
@@ -35,52 +37,28 @@ public class Manager : MonoBehaviour
 
     private void Start()
     {
-        AllScreeensinitial();
+        AllScreeensInitial();
         StartCoroutine(SplashScreenEnd());
        
     }
-    private void AllScreeensinitial()
+    private void AllScreeensInitial()
     {
 
-        SplashScreen.SetActive(true);
-        ModeSelection.SetActive(false);
-        LoginScreeen.SetActive(false);
-        FullProductScreen.SetActive(false);
-        ProductScreen.SetActive(false);
-        productModelScreen.SetActive(false);
-        EnginesScreen.SetActive(false);
+        SplashScreen.gameObject.SetActive(true);
+        ModeSelection.gameObject.SetActive(false);
+        LoginScreeen.gameObject.SetActive(false);
+        FullProductScreen.gameObject.SetActive(false);
+        ProductScreen.gameObject.SetActive(false);
+        productModelScreen.gameObject.SetActive(false);
+        EnginesScreen.gameObject.SetActive(false);
     }
 
     IEnumerator SplashScreenEnd()
     {
         yield return new WaitForSeconds(3f);
-        SplashScreen.SetActive(false);
-        ModeSelection.SetActive(true);
+        SplashScreen.gameObject.SetActive(false);
+        ModeSelection.gameObject.SetActive(true);
+        ashokLeylandLogo.gameObject.SetActive(true);
     }
-    public void ModeSelectionEnd()
-    {
-        ModeSelection.SetActive(false);
-        LoginScreeen.SetActive(true);
-    }
-    public void LoginScreeenEnd()
-    {
-        LoginScreeen.SetActive(false);
-        FullProductScreen.SetActive(true);
-
-    }
-    public void ProductScreenEnd()
-    {
-        ProductScreen.SetActive(false);
-        productModelScreen.SetActive(true);
-
-    }
-    public void productModelScreenEnd()
-    {
-        productModelScreen.SetActive(false);
-        EnginesScreen.SetActive(true);
-    }
-
-  
-
 }
 

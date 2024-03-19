@@ -6,10 +6,12 @@ using TMPro;
 
 public class Modeselection : MonoBehaviour
 {
-    [SerializeField] private Button EnterpriseModeButton;
+    [SerializeField] private Button enterpriseModeButton;
+    [SerializeField] private Button customerModeButton;
     private void OnEnable()
     {
-        EnterpriseModeButton.onClick.AddListener(Manager.instance.ModeSelectionEnd);
+        enterpriseModeButton.onClick.AddListener(ModeSelectionEnd);
+        customerModeButton.onClick.AddListener(ModeSelectionEnd);
     }
     void Start()
     {
@@ -20,5 +22,11 @@ public class Modeselection : MonoBehaviour
     void Update()
     {
         
+    }
+    public void ModeSelectionEnd()
+    {
+        Manager.instance.ModeSelection.gameObject.SetActive(false);
+        Manager.instance.LoginScreeen.gameObject.SetActive(true);
+      
     }
 }
