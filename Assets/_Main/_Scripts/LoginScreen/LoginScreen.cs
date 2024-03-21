@@ -13,18 +13,11 @@ public class LoginScreen : MonoBehaviour
         loginButton.onClick.AddListener(LoginScreeenEnd);
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void LoginScreeenEnd()
     {
-      Manager.instance.LoginScreeen.gameObject.SetActive(false);
+      Manager.instance.LoginScreen.gameObject.SetActive(false);
       Manager.instance.FullProductScreen.gameObject.SetActive(true);
       Manager.instance.ProductScreen.gameObject.SetActive(true);
-
 
     }
 }

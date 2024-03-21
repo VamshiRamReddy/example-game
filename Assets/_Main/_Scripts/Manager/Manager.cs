@@ -12,11 +12,11 @@ public class Manager : MonoBehaviour
 
     [SerializeField] public SplashScreen SplashScreen;
     [SerializeField] public Modeselection ModeSelection;
-    [SerializeField] public GameObject LoginScreeen;
-    [SerializeField] public GameObject FullProductScreen;
-    [SerializeField] public GameObject ProductScreen;
-    [SerializeField] public GameObject productModelScreen;
-    [SerializeField] public GameObject EnginesScreen;
+    [SerializeField] public LoginScreen LoginScreen;
+    [SerializeField] public AllProductsScreen FullProductScreen;
+    [SerializeField] public ProductScreen ProductScreen;
+    [SerializeField] public ProductModelScreen productModelScreen;
+    [SerializeField] public EngineScreen EnginesScreen;
 
     [SerializeField] public GameObject ashokLeylandLogo;
 
@@ -46,7 +46,7 @@ public class Manager : MonoBehaviour
 
         SplashScreen.gameObject.SetActive(true);
         ModeSelection.gameObject.SetActive(false);
-        LoginScreeen.gameObject.SetActive(false);
+        LoginScreen.gameObject.SetActive(false);
         FullProductScreen.gameObject.SetActive(false);
         ProductScreen.gameObject.SetActive(false);
         productModelScreen.gameObject.SetActive(false);
