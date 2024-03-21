@@ -10,8 +10,20 @@ public class ProductModelScreen : MonoBehaviour
     [SerializeField] List<Toggle> toggles = new List<Toggle>();
     [SerializeField]public  List<GameObject> allVehiclesFolder = new List<GameObject>();
     [SerializeField]public  List<Button> modelVechileFolderButton = new List<Button>();
+    public GameObject Nextscreen, LastScreen;
+    [SerializeField] private Button onBack;
 
+    private void OnEnable()
+    {
+        if (Manager.instance.isBackButtonClicked)
+        {
+            Manager.instance.isBackButtonClicked = false;
+            Manager.instance.LastScreen = LastScreen;
+        }
+        //  onBack.onClick.AddListener(back);
+    }
 
+    
     private void Start()
     {
         foreach (Toggle toggle in toggles)
@@ -24,6 +36,7 @@ public class ProductModelScreen : MonoBehaviour
             int index = i;
             Manager.instance.productModelScreen.modelVechileFolderButton[i].onClick.AddListener(() => OnButtonClick(index));
         }
+        Manager.instance.OnBackAction += back;
         ModelVechiles();
     }
 
@@ -35,11 +48,18 @@ public class ProductModelScreen : MonoBehaviour
         }
     }
 
+    private void back()
+    {
+        Debug.Log("This is being called");
+        Manager.instance.SetCurrentLastScren(LastScreen, Nextscreen);
+    }
+
     public void LoginScreeenEnd()
     {
-        Manager.instance.productModelScreen.gameObject.SetActive(false);
-        Manager.instance.EnginesScreen.gameObject.SetActive(true);
-      
+       // Manager.instance.productModelScreen.gameObject.SetActive(false);
+      //  Manager.instance.EnginesScreen.gameObject.SetActive(true);
+        Manager.instance.SetCurrentLastScren(Manager.instance.EnginesScreen.gameObject, Manager.instance.productModelScreen.gameObject);
+        Debug.Log("back");
     }
     private void ToggleValueChanged(Toggle changedToggle)
     {
@@ -62,7 +82,8 @@ public class ProductModelScreen : MonoBehaviour
 
     private void OnButtonClick(int index)
     {
-      
+       // Manager.instance.SetCurrentLastScren(Manager.instance.ProductScreen.gameObject, Manager.instance.LoginScreen.gameObject);
+
 
         if (index >= 0 && index <Manager.instance.EnginesScreen. allVehiclesEngineFolder.Count)
         {

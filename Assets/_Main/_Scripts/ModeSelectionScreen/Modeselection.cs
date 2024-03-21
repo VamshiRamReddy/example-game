@@ -25,8 +25,10 @@ public class Modeselection : MonoBehaviour
     }
     public void ModeSelectionEnd()
     {
-        Manager.instance.ModeSelection.gameObject.SetActive(false);
-        Manager.instance.LoginScreen.gameObject.SetActive(true);
-      
+       // Manager.instance.LoginScreen.gameObject.SetActive(true);
+       // Manager.instance.ModeSelection.gameObject.SetActive(false);
+
+        Manager.instance.SetCurrentLastScren(Manager.instance.LoginScreen.gameObject, Manager.instance.ModeSelection.gameObject);
+
     }
 }
