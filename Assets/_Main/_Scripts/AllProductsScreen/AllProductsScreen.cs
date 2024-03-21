@@ -6,5 +6,7 @@ using TMPro;
 
 public class AllProductsScreen : MonoBehaviour
 {
-  
+
+
+
 }
