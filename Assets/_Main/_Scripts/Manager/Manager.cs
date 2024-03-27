@@ -18,11 +18,13 @@ public class Manager : MonoBehaviour
     [SerializeField] public SplashScreen SplashScreen;
     [SerializeField] public Modeselection ModeSelection;
     [SerializeField] public LoginScreen LoginScreen;
-    [SerializeField] public AllProductsScreen FullProductScreen;
     [SerializeField] public EngineScreen EnginesScreen;
-
     [SerializeField] public ProductScreen ProductScreen;
-    [SerializeField] public ProductModelScreen productModelScreen; 
+    [SerializeField] public ProductModelScreen ProductModelScreen;
+    [SerializeField] public AllProductsScreen AllProductsScreen;
+  
+    [SerializeField] public VehicleDetailsManager vehicleDetailsManager;
+
     [SerializeField] public GameObject ashokLeylandLogo;
 
     [SerializeField] public Button BackButton;
@@ -62,9 +64,8 @@ public class Manager : MonoBehaviour
         SetCurrentLastScren(SplashScreen.gameObject, null);
         ModeSelection.gameObject.SetActive(false);
         LoginScreen.gameObject.SetActive(false);
-        FullProductScreen.gameObject.SetActive(false);
         ProductScreen.gameObject.SetActive(false);
-        productModelScreen.gameObject.SetActive(false);
+        ProductModelScreen.gameObject.SetActive(false);
         EnginesScreen.gameObject.SetActive(false);
     }
 
@@ -104,7 +105,3 @@ public class Manager : MonoBehaviour
         EnableAndDisableScreens(LastScreen, CurrentScreen);
     }
 }
-
-
-
-

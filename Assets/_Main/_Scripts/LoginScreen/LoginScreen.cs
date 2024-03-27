@@ -16,12 +16,8 @@ public class LoginScreen : MonoBehaviour
     }
     public void LoginScreeenEnd()
     {
-        //Manager.instance.LoginScreen.gameObject.SetActive(false);
-        Manager.instance.FullProductScreen.gameObject.SetActive(true);
-
-        //Manager.instance.CurrentScreen = Manager.instance.ProductScreen.gameObject;
-      //  Manager.instance.CurrentScreen.SetActive(true);
-
-        Manager.instance.SetCurrentLastScren(Manager.instance.ProductScreen.gameObject, Manager.instance.LoginScreen.gameObject);
+        Manager.instance.LoginScreen.gameObject.SetActive(false);
+        Manager.instance.AllProductsScreen.gameObject.SetActive(true);
+        Manager.instance.ProductScreen.gameObject.SetActive(true);
     }
 }
